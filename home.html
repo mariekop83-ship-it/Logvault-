@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LogVault — SMS Numbers &amp; Ready-Made Accounts</title>
+<meta name="description" content="Buy SMS verification numbers for any app and any country, and ready-made accounts, in one naira wallet. Instant delivery, automatic refunds.">
+<meta name="theme-color" content="#101B35">
+<link rel="icon" href="/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--navy:#101B35;--navy2:#0B1220;--side:#101B35;--sidehi:#1C2C55;--accent:#246BFD;--accent2:#1B56D6;--tint:#E8F0FF;--ok:#16B887;--err:#DC3545;--text:#101B35;--muted:#667085;--line:#E5EAF2;--bg:#F4F7FC;--shadow:0 1px 3px rgba(16,27,53,.06),0 8px 24px rgba(16,27,53,.06)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);-webkit-text-size-adjust:100%;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:40;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.hd .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:19px;letter-spacing:.2px}
+.brand img{width:46px;height:46px;object-fit:contain;display:block}
+.brand span small{display:block;font-weight:500;font-size:12px;color:#9DB4E8;letter-spacing:.8px;margin-top:-2px}
+.nav{display:none;gap:26px;color:#C9D3E8;font-size:15px;font-weight:500}
+.nav a:hover{color:#fff}
+.cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 20px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(36,107,253,.28)}
+.btn.primary:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.hero .btn.ghost,.final .btn.ghost{color:var(--navy);border-color:var(--line);background:#fff}
+.final .btn.ghost{color:#fff;background:transparent;border-color:rgba(255,255,255,.35)}
+.btn.sand{background:var(--tint);color:var(--accent)}
+.btn.lg{padding:15px 26px;font-size:17px;border-radius:12px}
+.hd .btn{padding:10px 16px;font-size:15px}
+
+/* screen 1 : hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;color:var(--text);overflow:hidden;background:var(--bg)}
+.hero .grid{display:grid;gap:44px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--tint);border:1px solid #CFE0FF;color:var(--accent);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+.hero h1{font-size:clamp(32px,5.2vw,50px);line-height:1.12;margin:18px 0 16px;font-weight:800;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:560px;margin:0 0 28px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:30px;color:var(--muted);font-size:15px}
+.chips b{color:var(--ok)}
+.scrollhint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);color:var(--muted);font-size:13px;text-align:center;letter-spacing:.6px}
+.scrollhint i{display:block;width:22px;height:34px;border:2px solid #C5CEDD;border-radius:14px;margin:0 auto 6px;position:relative}
+.scrollhint i:after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;margin-left:-2px;background:var(--accent);border-radius:3px;animation:wheel 1.6s infinite}
+@keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(12px)}}
+
+/* phone mock */
+.mock{position:relative;max-width:380px;margin:0 auto;width:100%}
+.mcard{position:relative;z-index:1;background:#fff;color:var(--text);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.mcard + .mcard{margin-top:14px;transform:translateX(18px);background:#fff}
+.mcard h4{margin:0 0 10px;font-size:15px;color:var(--muted);font-weight:600;letter-spacing:.4px}
+.num{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:12px;padding:12px 14px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.num small{background:var(--navy);color:#fff;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700}
+.cd{display:flex;justify-content:space-between;align-items:center;background:var(--tint);color:var(--accent);border-radius:12px;padding:10px 14px;margin-top:12px;font-weight:600}
+.cd b{font-size:26px;font-variant-numeric:tabular-nums}
+.codebox{margin-top:12px;background:#E7F8F2;color:#0E8A64;border-radius:12px;padding:12px 14px;font-weight:800;font-size:20px;display:flex;justify-content:space-between;align-items:center}
+.row2{display:flex;align-items:center;gap:12px}
+.logo-sq{width:46px;height:46px;border-radius:12px;background:var(--tint);display:grid;place-items:center;font-size:22px}
+.row2 b{display:block}.row2 span{color:var(--muted);font-size:14px}
+.row2 .price{margin-left:auto;font-weight:800}
+
+/* screen 2 : features */
+.sec{padding:96px 0}
+.sec.light{background:var(--bg)}
+.kicker{color:var(--accent);font-weight:800;letter-spacing:1.4px;font-size:13px;text-transform:uppercase}
+.sec h2{font-size:clamp(28px,4.6vw,44px);line-height:1.15;margin:10px 0 14px;font-weight:800;letter-spacing:-.3px}
+.sec .sub{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:640px;margin:0 0 44px}
+.cards{display:grid;gap:18px}
+.fc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}
+.fc:hover{border-color:#CFE0FF;box-shadow:0 10px 28px rgba(16,27,53,.09)}
+.fc .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:28px;margin-bottom:16px;background:var(--tint)}
+.fc h3{margin:0 0 8px;font-size:22px}
+.fc p{margin:0;color:var(--muted);font-size:16.5px}
+.fc ul{margin:14px 0 0;padding:0;list-style:none;color:#101B35;font-size:15.5px}
+.fc li{padding:3px 0}.fc li:before{content:"✓";color:var(--ok);font-weight:800;margin-right:8px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+.stat{background:var(--navy);color:#fff;border-radius:16px;padding:22px;text-align:center}
+.stat b{display:block;font-size:30px;color:#fff}
+.stat span{color:#C9D3E8;font-size:15px}
+
+/* screen 3 : how, trust, faq */
+.steps{display:grid;gap:18px;counter-reset:s}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px 26px 26px 84px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:22px;top:24px;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center}
+.step h3{margin:0 0 6px;font-size:21px}.step p{margin:0;color:var(--muted);font-size:16.5px}
+.trust{display:grid;gap:16px;margin-top:54px}
+.tr{display:flex;gap:14px;align-items:flex-start;background:var(--navy);color:#E5EAF2;border-radius:16px;padding:20px}
+.tr .t{font-size:26px}.tr b{display:block;color:#fff;font-size:18px;margin-bottom:2px}.tr span{font-size:15.5px;color:#aeb9cb}
+.faq{margin-top:54px;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px 20px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:24px;color:var(--accent);line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted);font-size:16.5px}
+.final{margin-top:70px;border-radius:16px;padding:48px 26px;text-align:center;color:#fff;background:var(--navy)}
+.final h2{margin:0 0 10px;font-size:clamp(26px,4.4vw,40px)}
+.final p{color:#C9D3E8;margin:0 auto 26px;max-width:520px;font-size:18px}
+.final .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+footer{background:#0B1220;color:#98A2B3;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+footer .brand{font-size:17px}footer .brand img{width:38px;height:38px}
+footer nav{display:flex;gap:22px}footer a:hover{color:#fff}
+
+
+.band{padding:70px 0;background:#fff}
+.svc{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 40px;max-width:860px}
+.svc span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:15.5px;color:#101B35;box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.svc span:last-child{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cards.two{grid-template-columns:1fr}
+@media (min-width:720px){.cards.two{grid-template-columns:repeat(2,1fr)}}
+.hd .btn,.hero .btn,.final .btn{font-family:inherit}
+/* sign in / sign up popup */
+.ov{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(8,12,20,.66);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);overflow:auto}
+.ov.open{display:flex;animation:fade .18s ease-out}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.dlg{position:relative;width:100%;max-width:440px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:#fff;color:var(--text);border-radius:16px;padding:26px 24px 22px;box-shadow:0 24px 60px rgba(11,18,32,.35);animation:pop .22s ease-out}
+@keyframes pop{from{transform:translateY(16px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.dlg .x{position:absolute;right:12px;top:10px;width:38px;height:38px;border:0;background:#F4F7FC;border-radius:50%;font-size:22px;line-height:1;color:#667085;cursor:pointer}
+.dlg .x:hover{background:#E5EAF2}
+.dlg .lg{display:flex;justify-content:center;margin:2px 0 6px}.dlg .lg img{width:84px;height:84px;object-fit:contain}
+.tabs{display:flex;background:#F4F7FC;border-radius:14px;padding:5px;margin:8px 0 18px}
+.tabs button{flex:1;border:0;background:transparent;padding:11px 8px;border-radius:10px;font-weight:700;font-size:16px;line-height:1;font-family:inherit;color:#667085;cursor:pointer}
+.tabs button.on{background:#fff;color:#101B35;box-shadow:0 2px 8px rgba(15,23,42,.12)}
+.dlg h3{margin:0 0 4px;font-size:22px;text-align:center}
+.dlg .hint{margin:0 0 14px;text-align:center;color:var(--muted);font-size:15px}
+.dlg label{display:block;font-size:14px;font-weight:700;color:#101B35;margin:12px 0 6px}
+.dlg input,.dlg select{width:100%;border:1.5px solid #D0D7E5;border-radius:12px;padding:13px 14px;font-size:16px;font-family:inherit;background:#fff;color:var(--text)}
+.dlg input:focus,.dlg select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(36,107,253,.16)}
+.pw{position:relative}.pw input{padding-right:62px}
+.pw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--accent2);font-weight:700;font-size:14px;padding:8px 10px;cursor:pointer;font-family:inherit}
+.dlg .go{width:100%;margin-top:18px;padding:14px;font-size:17px}
+.dlg .btn.primary{color:#ffffff}
+.dlg .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:15px}
+.dlg .row a,.dlg .sw a{color:var(--accent2);font-weight:700}
+.dlg .sw{text-align:center;margin-top:16px;color:var(--muted);font-size:15px}
+.msg{padding:11px 13px;border-radius:12px;margin:0 0 6px;font-size:15px;display:none}
+.msg.err{display:block;background:#FBE9EB;color:#B02A37}.msg.ok{display:block;background:#E7F8F2;color:#0E8A64}
+.two2{display:grid;gap:0 12px}@media(min-width:460px){.two2{grid-template-columns:1fr 1fr}}
+body.lock{overflow:hidden}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scrollhint i:after{animation:none}html{scroll-behavior:auto}}
+
+@media (min-width:720px){
+ .nav{display:flex}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(4,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .step{padding:84px 24px 24px}.step:before{left:24px;top:24px}
+ .trust{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:980px){
+ .hero .grid{grid-template-columns:1.1fr .9fr}
+ .cards{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:420px){.hd .btn.ghost{display:none}.brand span small{display:none}.hero .actions .btn{flex:1}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+ <div class="wrap">
+  <a class="brand" href="/"><img src="/vault/vault-logo.png" alt="LogVault"><span>LogVault<small>NUMBERS · ACCOUNTS</small></span></a>
+  <nav class="nav"><a href="#features">What we offer</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+  <div class="cta" id="hdcta"><button class="btn ghost" data-auth="in" type="button">Sign in</button><button class="btn primary" data-auth="up" type="button">Sign up</button></div>
+ </div>
+</header>
+
+<!-- ───────── SCREEN 1 ───────── -->
+<section class="hero">
+ <div class="wrap grid">
+  <div>
+   <span class="pill">⚡ Instant delivery · ₦ naira wallet</span>
+   <h1>Verification numbers &amp; ready-made accounts, <em>delivered in seconds.</em></h1>
+   <p class="lead">Get an SMS number for any app in any country, or pick up a ready-made account, all from one wallet. If no code arrives, your money comes back automatically.</p>
+   <div class="actions" id="heroact">
+    <button class="btn primary lg" data-auth="up" type="button">Create free account</button>
+    <button class="btn ghost lg" data-auth="in" type="button">Sign in</button>
+   </div>
+   <div class="chips"><span><b>✓</b> No monthly fees</span><span><b>✓</b> Auto-refund on no code</span><span><b>✓</b> Pay with card, transfer or crypto</span></div>
+  </div>
+  <div class="mock" aria-hidden="true">
+   <div class="glow"></div>
+   <div class="mcard">
+    <h4>YOUR NUMBER</h4>
+    <div class="num"><span>+1 415 555 0142</span><small>WhatsApp · USA</small></div>
+    <div class="cd"><span>Time left</span><b id="mcd">19:42</b></div>
+    <div class="codebox"><span>Code</span><span>380 881</span></div>
+   </div>
+   <div class="mcard">
+    <h4>READY-MADE ACCOUNTS</h4>
+    <div class="row2"><div class="logo-sq">📦</div><div><b>Verified account</b><span>In stock · instant</span></div><div class="price">₦2,500</div></div>
+   </div>
+  </div>
+ </div>
+ <div class="scrollhint"><i></i>SCROLL</div>
+</section>
+
+<!-- ───────── SCREEN 2 ───────── -->
+<section class="sec" id="features">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">What we offer</span>
+  <h2>Everything you need, in one place.</h2>
+  <p class="sub">Whether you need a quick verification code or a ready-made account, LogVault gets you there without the stress.</p></div>
+  <div class="cards">
+   <div class="fc rv"><div class="ic">📲</div><h3>SMS numbers</h3><p>Receive verification codes for any app, from any country.</p>
+    <ul><li>Pick a service and country</li><li>Live countdown on your number</li><li>Cancel &amp; refund in one tap</li></ul></div>
+   <div class="fc rv"><div class="ic">🛒</div><h3>Accounts marketplace</h3><p>Ready-made accounts and logins, delivered the moment you pay.</p>
+    <ul><li>Browse by category</li><li>Details saved in your Orders</li><li>Clear price, no surprises</li></ul></div>
+   <div class="fc rv"><div class="ic">👛</div><h3>Easy wallet</h3><p>Fund once in naira and spend on anything across the site.</p>
+    <ul><li>Card, bank transfer &amp; crypto</li><li>Instant credit after payment</li><li>Full transaction history</li></ul></div>
+   <div class="fc rv"><div class="ic">🔑</div><h3>API access</h3><p>Building something? Connect your own app to our numbers.</p>
+    <ul><li>Your own API key</li><li>Manage it from your account</li><li>Made for resellers</li></ul></div>
+  </div>
+  <div class="stats">
+   <div class="stat rv"><b>20 min</b><span>number rental window</span></div>
+   <div class="stat rv"><b>100%</b><span>auto-refund if no code</span></div>
+   <div class="stat rv"><b>24/7</b><span>always available</span></div>
+   <div class="stat rv"><b>Any app</b><span>any country</span></div>
+  </div>
+ </div>
+</section>
+
+
+<!-- ───────── SERVICES BAND ───────── -->
+<section class="sec band" id="services">
+ <div class="wrap">
+  <div class="rv" style="text-align:center"><span class="kicker">Works with the apps you use</span>
+  <h2 style="margin-bottom:8px">Numbers for almost any app.</h2>
+  <p class="sub" style="margin:0 auto 30px">WhatsApp, Telegram, Instagram, Facebook, TikTok, Google, X, Snapchat, Discord and hundreds more, in countries all over the world.</p></div>
+  <div class="svc rv"><span>WhatsApp</span><span>Telegram</span><span>Instagram</span><span>Facebook</span><span>TikTok</span><span>Google</span><span>X (Twitter)</span><span>Snapchat</span><span>Discord</span><span>Tinder</span><span>Uber</span><span>PayPal</span><span>+ 500 more</span></div>
+ </div>
+</section>
+
+<!-- ───────── SCREEN 3 ───────── -->
+<section class="sec light" id="how">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">How it works</span>
+  <h2>Up and running in three steps.</h2>
+  <p class="sub">No complicated setup. Create an account, add money, and buy.</p></div>
+  <div class="steps">
+   <div class="step rv"><h3>Create your account</h3><p>Sign up with your email in under a minute. It's free.</p></div>
+   <div class="step rv"><h3>Fund your wallet</h3><p>Add money with your card, a bank transfer or crypto. It reflects right away.</p></div>
+   <div class="step rv"><h3>Buy &amp; receive</h3><p>Choose a number or an account. Your code or details show on the screen at once.</p></div>
+  </div>
+
+  <div class="trust">
+   <div class="tr rv"><div class="t">🛡️</div><div><b>Your money is protected</b><span>If a number never gets a code, it is cancelled and refunded automatically.</span></div></div>
+   <div class="tr rv"><div class="t">⚡</div><div><b>Fast and reliable</b><span>Numbers and accounts appear instantly, so you never wait around.</span></div></div>
+   <div class="tr rv"><div class="t">🔒</div><div><b>Secure payments</b><span>Payments go through trusted gateways. We never see your card details.</span></div></div>
+   <div class="tr rv"><div class="t">💬</div><div><b>Real support</b><span>Stuck on something? Reach our team and we'll sort it out.</span></div></div>
+  </div>
+
+  <div class="faq" id="faq">
+   <div class="rv" style="margin-bottom:4px"><span class="kicker">FAQ</span><h2 style="margin-bottom:0">Questions? Answers.</h2></div>
+   <details class="rv"><summary>How long do I have to receive the code?</summary><p>Each number stays active for 20 minutes. If no code arrives in that time, the number expires and your money is returned to your wallet.</p></details>
+   <details class="rv"><summary>Can I cancel a number?</summary><p>Yes. Press Cancel &amp; refund on your number and confirm. Some numbers can only be cancelled after the first 2 minutes.</p></details>
+   <details class="rv"><summary>How do I add money?</summary><p>Open your wallet and choose a payment method: card, bank transfer or crypto. Your balance updates as soon as the payment is confirmed.</p></details>
+   <details class="rv"><summary>Where do I find what I bought?</summary><p>Everything you buy, including account details and codes, is saved in your Orders page, so you can open it again any time.</p></details>
+  </div>
+
+  <div class="final rv">
+   <h2>Ready to get started?</h2>
+   <p>Join LogVault today and get your first number or account in minutes.</p>
+   <div class="actions" id="finalact">
+    <button class="btn primary lg" data-auth="up" type="button">Sign up free</button>
+    <button class="btn ghost lg" data-auth="in" type="button">Sign in</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a class="brand" href="/"><img src="/vault/vault-logo.png" alt="LogVault"><span>LogVault</span></a>
+  <nav id="ftnav"><a href="#" data-auth="in">Sign in</a><a href="#" data-auth="up">Sign up</a></nav>
+  <div>© <span id="yr"></span> LogVault. All rights reserved.</div>
+ </div>
+</footer>
+
+
+<!-- ───────── SIGN IN / SIGN UP POPUP ───────── -->
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="dttl">
+ <div class="dlg">
+  <button class="x" id="dx" type="button" aria-label="Close">×</button>
+  <div class="lg"><img src="/vault/vault-logo.png" alt="LogVault"></div>
+
+  <div id="pTabs" class="tabs"><button type="button" data-auth="in" id="tIn">Sign in</button><button type="button" data-auth="up" id="tUp">Sign up</button></div>
+
+  <!-- sign in -->
+  <form id="fIn" novalidate>
+   <h3 id="dttl">Welcome back</h3><p class="hint">Sign in to your account.</p>
+   <div class="msg" id="mIn"></div>
+   <label for="inEmail">Email</label><input id="inEmail" type="email" autocomplete="email" required>
+   <label for="inPw">Password</label><div class="pw"><input id="inPw" type="password" autocomplete="current-password" required><button type="button" data-show="inPw">Show</button></div>
+   <div class="row"><span></span><a href="#" id="lost">Lost password?</a></div>
+   <button class="btn primary go" id="goIn">Sign in</button>
+   <div class="sw">New here? <a href="#" data-auth="up">Create an account</a></div>
+  </form>
+
+  <!-- sign up -->
+  <form id="fUp" novalidate style="display:none">
+   <h3>Create your account</h3><p class="hint">It's free and takes under a minute.</p>
+   <div class="msg" id="mUp"></div>
+   <label for="upName">Your name</label><input id="upName" autocomplete="name" required>
+   <label for="upEmail">Email</label><input id="upEmail" type="email" autocomplete="email" required>
+   <div class="two2"><div><label for="upCountry">Country</label><select id="upCountry"><option value="">Select country</option></select></div>
+   <div><label for="upPhone">WhatsApp number</label><input id="upPhone" type="tel" autocomplete="tel" placeholder="08012345678" required></div></div>
+   <div class="two2"><div><label for="upPw">Password</label><div class="pw"><input id="upPw" type="password" autocomplete="new-password" minlength="8" required><button type="button" data-show="upPw">Show</button></div></div>
+   <div><label for="upPw2">Confirm password</label><input id="upPw2" type="password" autocomplete="new-password" minlength="8" required></div></div>
+   <button class="btn primary go" id="goUp">Create account</button>
+   <div class="sw">Already have an account? <a href="#" data-auth="in">Sign in</a></div>
+  </form>
+
+  <!-- forgot password: step 1 -->
+  <form id="fR1" novalidate style="display:none">
+   <h3>Forgot password</h3><p class="hint">Enter your email and we'll send you a 6-digit code.</p>
+   <div class="msg" id="mR1"></div>
+   <label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" required>
+   <button class="btn primary go" id="goR1">Send reset code</button>
+   <div class="sw"><a href="#" data-auth="in">Back to sign in</a></div>
+  </form>
+
+  <!-- forgot password: step 2 -->
+  <form id="fR2" novalidate style="display:none">
+   <h3>Reset password</h3><p class="hint" id="rInfo">Enter the code we emailed you.</p>
+   <div class="msg" id="mR2"></div>
+   <label for="rCode">6-digit code</label><input id="rCode" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required>
+   <label for="rPw">New password</label><input id="rPw" type="password" autocomplete="new-password" minlength="8" required>
+   <label for="rPw2">Confirm new password</label><input id="rPw2" type="password" autocomplete="new-password" minlength="8" required>
+   <button class="btn primary go" id="goR2">Reset password</button>
+   <div class="sw"><a href="#" id="resend">Resend code</a> &nbsp;·&nbsp; <a href="#" data-auth="in">Back to sign in</a></div>
+  </form>
+ </div>
+</div>
+
+<script>
+(function(){
+  // signed-in visitors get a Dashboard button instead of Sign in / Sign up
+  var t='';try{t=localStorage.getItem('lvt_token')||localStorage.getItem('token')||''}catch(e){}
+  if(t){
+    var dash='<a class="btn primary" href="/dashboard">Go to dashboard</a>';
+    document.getElementById('hdcta').innerHTML=dash;
+    document.getElementById('heroact').innerHTML='<a class="btn primary lg" href="/dashboard">Go to dashboard</a><a class="btn ghost lg" href="/sms">Buy a number</a>';
+    document.getElementById('finalact').innerHTML='<a class="btn primary lg" href="/dashboard">Go to dashboard</a>';
+    document.getElementById('ftnav').innerHTML='<a href="/dashboard">Dashboard</a><a href="/orders">Orders</a>';
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // scroll reveal
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=((i%4)*70)+'ms';io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+  // little live countdown in the phone mock
+  var s=19*60+42,m=document.getElementById('mcd');
+  setInterval(function(){s=s<=1?19*60+59:s-1;m.textContent=('0'+Math.floor(s/60)).slice(-2)+':'+('0'+s%60).slice(-2)},1000);
+})();
+
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var ov=$('ov'),forms=['fIn','fUp','fR1','fR2'],resetEmail='',lastFocus=null,countriesLoaded=false;
+  function setMsg(id,t,c){var e=$(id);e.textContent=t||'';e.className='msg'+(t?' '+c:'')}
+  function view(name){
+    forms.forEach(function(f){$(f).style.display=(f===name)?'':'none'});
+    $('pTabs').style.display=(name==='fIn'||name==='fUp')?'':'none';
+    $('tIn').classList.toggle('on',name==='fIn');$('tUp').classList.toggle('on',name==='fUp');
+    ['mIn','mUp','mR1','mR2'].forEach(function(m){setMsg(m,'')});
+    if(name==='fUp')loadCountries();
+    var first=$(name).querySelector('input,select');if(first)setTimeout(function(){try{first.focus()}catch(e){}},60);
+  }
+  function openAuth(which){
+    lastFocus=document.activeElement;
+    ov.classList.add('open');document.body.classList.add('lock');
+    view(which==='up'?'fUp':'fIn');
+    try{history.replaceState(null,'',which==='up'?'#signup':'#signin')}catch(e){}
+  }
+  function closeAuth(){
+    ov.classList.remove('open');document.body.classList.remove('lock');
+    try{if(/^#sign/.test(location.hash))history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+    if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}
+  }
+  // every element with data-auth opens / switches the popup (no page change)
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('[data-auth]');
+    if(t){e.preventDefault();var w=t.getAttribute('data-auth');if(ov.classList.contains('open'))view(w==='up'?'fUp':'fIn');else openAuth(w);return}
+    var sh=e.target.closest&&e.target.closest('[data-show]');
+    if(sh){var i=$(sh.getAttribute('data-show'));var show=i.type==='password';i.type=show?'text':'password';sh.textContent=show?'Hide':'Show'}
+  });
+  $('dx').onclick=closeAuth;
+  ov.addEventListener('mousedown',function(e){if(e.target===ov)closeAuth()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))closeAuth()});
+  $('lost').onclick=function(e){e.preventDefault();$('rEmail').value=$('inEmail').value.trim();view('fR1')};
+
+  function post(url,body){
+    return fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){
+      return r.json().catch(function(){return {}}).then(function(d){
+        if(!r.ok){var er=new Error(d.error||d.message||'Something went wrong. Please try again.');throw er}
+        return d})})
+  }
+  function saveSession(d){try{localStorage.setItem('lvt_token',d.token);localStorage.setItem('token',d.token);if(d.user)localStorage.setItem('lvt_user',JSON.stringify(d.user))}catch(e){}}
+  function busy(b,on,txt){b.disabled=on;if(txt!==undefined){if(on){b.dataset.t=b.textContent;b.textContent=txt}else if(b.dataset.t){b.textContent=b.dataset.t}}}
+
+  // sign in
+  $('fIn').onsubmit=function(e){e.preventDefault();var b=$('goIn');
+    var em=$('inEmail').value.trim(),pw=$('inPw').value;
+    if(!em||!pw){setMsg('mIn','Enter your email and password.','err');return}
+    setMsg('mIn','');busy(b,true,'Signing in…');
+    post('/api/auth/login',{email:em,password:pw}).then(function(d){saveSession(d);location.replace('/dashboard')})
+    .catch(function(er){setMsg('mIn',er.message,'err');busy(b,false,1)})};
+
+  // sign up
+  function loadCountries(){
+    if(countriesLoaded)return;countriesLoaded=true;var sel=$('upCountry');
+    var fallback='<option value="NG">Nigeria</option><option value="GH">Ghana</option><option value="KE">Kenya</option><option value="ZA">South Africa</option><option value="US">United States</option><option value="GB">United Kingdom</option>';
+    function esc(x){return String(x==null?'':x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+    fetch('/api/countries').then(function(r){return r.json()}).then(function(l){
+      var list=Array.isArray(l)?l:(l.countries||[]);
+      if(!list.length)throw 0;
+      sel.innerHTML='<option value="">Select country</option>'+list.map(function(c){return '<option value="'+esc(c.code||c.iso)+'">'+esc(c.name)+'</option>'}).join('');
+    }).catch(function(){sel.innerHTML='<option value="">Select country</option>'+fallback});
+  }
+  $('fUp').onsubmit=function(e){e.preventDefault();var b=$('goUp');
+    var name=$('upName').value.trim(),em=$('upEmail').value.trim(),c=$('upCountry').value,ph=$('upPhone').value.trim(),pw=$('upPw').value;
+    if(!name||!em||!ph||!pw){setMsg('mUp','Please complete every field.','err');return}
+    if(!c){setMsg('mUp','Please select your country.','err');return}
+    if(pw.length<8){setMsg('mUp','Password must be at least 8 characters.','err');return}
+    if(pw!==$('upPw2').value){setMsg('mUp','The two passwords do not match.','err');return}
+    var ref='';try{ref=new URLSearchParams(location.search).get('ref')||''}catch(x){}
+    setMsg('mUp','');busy(b,true,'Creating account…');
+    post('/api/auth/register',{name:name,email:em,country:c,phoneCountry:c,phone:ph,password:pw,refCode:ref}).then(function(d){saveSession(d);location.replace('/dashboard')})
+    .catch(function(er){setMsg('mUp',er.message,'err');busy(b,false,1)})};
+
+  // forgot password
+  function sendCode(email,msgId,btn){
+    busy(btn,true,'Sending…');
+    return post('/api/auth/forgot-password',{email:email}).then(function(d){
+      resetEmail=email;$('rInfo').textContent=((d.message||'A reset code was sent.')+' '+(d.spamNote||'')).trim();
+      view('fR2');setMsg('mR2','Code sent. Check your inbox and spam folder.','ok')})
+    .catch(function(er){setMsg(msgId,er.message,'err')}).then(function(){busy(btn,false,1)})}
+  $('fR1').onsubmit=function(e){e.preventDefault();var em=$('rEmail').value.trim().toLowerCase();if(!em){setMsg('mR1','Enter your email.','err');return}sendCode(em,'mR1',$('goR1'))};
+  $('resend').onclick=function(e){e.preventDefault();if(resetEmail)sendCode(resetEmail,'mR2',$('goR2'))};
+  $('fR2').onsubmit=function(e){e.preventDefault();var b=$('goR2');
+    if($('rPw').value!==$('rPw2').value){setMsg('mR2','The two passwords do not match.','err');return}
+    if($('rPw').value.length<8){setMsg('mR2','Password must be at least 8 characters.','err');return}
+    busy(b,true,'Saving…');
+    post('/api/auth/reset-password-with-code',{email:resetEmail,code:$('rCode').value.trim(),newPassword:$('rPw').value}).then(function(d){
+      view('fIn');$('inEmail').value=resetEmail;$('inPw').value='';setMsg('mIn',d.message||'Password updated. You can now sign in.','ok')})
+    .catch(function(er){setMsg('mR2',er.message,'err')}).then(function(){busy(b,false,1)})};
+
+  // open from a link like  /#signin  /#signup  or a referral link  /?ref=CODE
+  function fromUrl(){
+    var h=location.hash,ref='';try{ref=new URLSearchParams(location.search).get('ref')||''}catch(x){}
+    var signedIn='';try{signedIn=localStorage.getItem('lvt_token')||localStorage.getItem('token')||''}catch(x){}
+    if(signedIn)return;
+    if(h==='#signup'||ref)openAuth('up');else if(h==='#signin'||h==='#login')openAuth('in');
+  }
+  fromUrl();
+})();
+</script>
+</body>
+</html>
