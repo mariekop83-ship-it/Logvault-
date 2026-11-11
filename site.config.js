@@ -25,7 +25,7 @@ const BRAND = {
     "LogVault: SMS numbers, social accounts and digital products.",
 
   // Your live domain, no https:// (used for sitemap + link previews)
-  domain:    (env.BRAND_DOMAIN || env.SITE_URL || 'logvault.com').replace(/^https?:\/\//, '').replace(/\/.*$/, ''),
+  domain:    (env.BRAND_DOMAIN || env.SITE_URL || 'logvault.name.ng').replace(/^https?:\/\//, '').replace(/\/.*$/, ''),
 
   // Prefix stamped on payment references and bank narrations. SET ONCE.
   txPrefix:  (env.BRAND_TX_PREFIX || 'LVT').toUpperCase(),
@@ -103,3 +103,4 @@ function publicBrand() {
 }
 
 module.exports = { BRAND, PAGE_SEO, brandCss, publicBrand };
+              
