@@ -1,9 +1,12 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in — LogVault</title><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/vault/vault.css"></head><body><div class="authwrap"><a class="logo" href="/"><img src="/vault/vault-logo.png" alt="LogVault"></a>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in — LogVault</title><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/vault/vault.css"><style>.gdiv{display:flex;align-items:center;gap:12px;margin:20px 0 14px;color:var(--muted);font-size:14px}.gdiv:before,.gdiv:after{content:"";flex:1;height:1px;background:var(--line)}.gbtn{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600}.gnote{text-align:center;font-size:13px;margin:10px 0 0}</style></head><body><div class="authwrap"><a class="logo" href="/"><img src="/vault/vault-logo.png" alt="LogVault"></a>
 <div class="card"><h2>Sign in</h2><div id="m" class="msg"></div>
 <form id="f"><label>Your Email</label><input id="email" type="email" autocomplete="email" required>
 <label>Your Password</label><input id="pw" type="password" autocomplete="current-password" required>
 <div class="chk"><label><input type="checkbox" id="rm">Remember me</label><a href="#" id="lost">Lost password?</a></div>
 <button class="btn block" id="go">Sign in</button></form>
+<div class="gdiv"><span>or</span></div>
+<a class="btn white block gbtn" id="gbtn" href="/auth/google?agreedTerms=1"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.1 1.4-4.9 2.3-8.2 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg><span>Continue with Google</span></a>
+<p class="muted gnote">By continuing with Google you agree to our Terms &amp; Conditions.</p>
 <div class="foot">Not registered? <a href="/register">Create account</a></div></div>
 <div class="card" id="rs1" style="display:none"><h2>Forgot password</h2><div id="m1" class="msg"></div>
 <p class="muted" style="font-size:18px;line-height:1.5">Enter the email on your account and we will send you a 6-digit reset code.</p>
@@ -22,6 +25,13 @@ if(token())location.replace('/dashboard');
 let resetEmail='';
 const show=id=>{['signin','rs1','rs2'].forEach(x=>{const e=x==='signin'?document.querySelector('.authwrap .card'):document.getElementById(x);if(e)e.style.display=(x===id)?'':'none'})};
 const setMsg=(el,t,c)=>{el.textContent=t;el.className='msg '+c};
+
+(async()=>{const q=new URLSearchParams(location.search);const code=q.get('googleLoginCode'),err=q.get('googleLoginError');
+ if(code){history.replaceState(null,'','/login');$('#m').textContent='Signing you in with Google…';$('#m').className='msg ok';
+  try{const d=await api('/api/auth/google/exchange','POST',{code});saveSession(d);location.replace('/dashboard')}
+  catch(er){setMsg($('#m'),er.message,'err')}}
+ else if(err){history.replaceState(null,'','/login');
+  setMsg($('#m'),q.get('googleLoginMsg')||'Google sign-in failed. Please try again.','err')}})();
 $('#lost').onclick=e=>{e.preventDefault();$('#remail').value=$('#email').value.trim();show('rs1')};
 $('#back1').onclick=$('#back2').onclick=e=>{e.preventDefault();show('signin')};
 async function sendCode(email,m,btn){
